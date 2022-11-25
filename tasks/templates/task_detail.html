@@ -11,17 +11,21 @@
         <form action="" method="POST" class="card card-body">
           {% csrf_token %}
           {{form.as_div}}
-          <button class="btn btn-primary">Update</button>
-          <form action="{% url 'complete_task' task.id %}" method="POST">
-            {% csrf_token %}
-            <button class="btn btn-secondary mt-2">
-              Complete
-            </button>
-            <form action="{% url 'delete_task' task.id %}" method="POST">
-              {% csrf_token %}
-              <button class="btn btn-danger mt-2">Delete</button>
-            </form>
-          </form>
+          <button class="btn btn-primary">
+            Update
+          </button>
+        </form>
+        <form action="{% url 'complete_task' task.id %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-secondary mt-2">
+            Complete
+          </button>
+        </form>
+        <form action="{% url 'delete_task' task.id %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-danger mt-2">
+            Delete
+          </button>
         </form>
       </div>
     </div>
